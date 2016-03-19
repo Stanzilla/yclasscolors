@@ -27,7 +27,9 @@ local function update()
                 end
             else
                 local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
+                name = strsplit("-", name, 2)
                 local displayedName = ycc.classColor[classFileName] .. name
+
 
                 if(_VIEW == 'playerStatus') then
                     button.string1:SetText(ycc.diffColor[level] .. level)
