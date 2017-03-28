@@ -1,4 +1,4 @@
-## Interface: 70100
+## Interface: 70200
 
 ## Title: yClassColors
 ## Notes: Colorize name by class!
@@ -13,4 +13,3 @@ friends.lua
 guild.lua
 lfr.lua
 who.lua
-
