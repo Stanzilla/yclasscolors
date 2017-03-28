@@ -1,6 +1,8 @@
 local _, ns = ...
 local ycc = ns.ycc
 
+-- luacheck: globals FauxScrollFrame_GetOffset WorldStateScoreScrollFrame MAX_WORLDSTATE_SCORE_BUTTONS
+
 hooksecurefunc('WorldStateScoreFrame_Update', function()
     local inArena = IsActiveBattlefieldArena()
     local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
@@ -38,9 +40,8 @@ hooksecurefunc('WorldStateScoreFrame_Update', function()
 
             local button = _G['WorldStateScoreButton' .. i]
             button.name.text:SetText(n)
---            local buttonNameText = getglobal('WorldStateScoreButton' .. i .. 'NameText')
---            buttonNameText:SetText(n)
+            -- local buttonNameText = _G['WorldStateScoreButton' .. i .. 'NameText']
+            -- buttonNameText:SetText(n)
         end
     end
 end)
-

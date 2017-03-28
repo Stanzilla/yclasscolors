@@ -1,7 +1,8 @@
-
 local _, ns = ...
 local ycc = ns.ycc
 local _VIEW
+
+-- luacheck: globals GuildRosterContainer
 
 local function setview(view)
     _VIEW = view
@@ -29,7 +30,6 @@ local function update()
                 local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
                 name = strsplit("-", name, 2)
                 local displayedName = ycc.classColor[classFileName] .. name
-
 
                 if(_VIEW == 'playerStatus') then
                     button.string1:SetText(ycc.diffColor[level] .. level)
@@ -67,4 +67,3 @@ hooksecurefunc('GuildFrame_LoadUI', function()
         hooksecurefunc(GuildRosterContainer, 'update', update)
     end
 end)
-

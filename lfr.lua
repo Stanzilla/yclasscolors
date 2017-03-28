@@ -1,4 +1,3 @@
-
 local _, ns = ...
 local ycc = ns.ycc
 
@@ -11,5 +10,3 @@ hooksecurefunc('LFRBrowseFrameListButton_SetData', function(button, index)
         button.level:SetText(ycc.diffColor[level] .. level)
     end
 end)
-
-
