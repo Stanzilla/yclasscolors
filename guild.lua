@@ -57,13 +57,15 @@ local function update()
 end
 
 local loaded = false
-hooksecurefunc('GuildFrame_LoadUI', function()
-    if(loaded) then
-        return
-    else
-        loaded = true
-        hooksecurefunc('GuildRoster_SetView', setview)
-        hooksecurefunc('GuildRoster_Update', update)
-        hooksecurefunc(GuildRosterContainer, 'update', update)
-    end
-end)
+if not ycc.IsClassic() then
+    hooksecurefunc('GuildFrame_LoadUI', function()
+        if(loaded) then
+            return
+        else
+            loaded = true
+            hooksecurefunc('GuildRoster_SetView', setview)
+            hooksecurefunc('GuildRoster_Update', update)
+            hooksecurefunc(GuildRosterContainer, 'update', update)
+        end
+    end)
+end

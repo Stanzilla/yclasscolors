@@ -2,6 +2,12 @@ local _, ns = ...
 local ycc = {}
 ns.ycc = ycc
 
+-- luacheck: globals WOW_PROJECT_ID WOW_PROJECT_CLASSIC
+
+function ycc.IsClassic()
+    return WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
+end
+
 local GUILD_INDEX_MAX = 12
 local SMOOTH = {
     1, 0, 0,

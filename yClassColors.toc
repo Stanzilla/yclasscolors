@@ -1,4 +1,4 @@
-## Interface: 70300
+## Interface: 80200
 
 ## Title: yClassColors
 ## Notes: Colorize name by class!
@@ -8,8 +8,8 @@
 
 core.lua
 
-battlefield.lua
+#battlefield.lua
 friends.lua
 guild.lua
 lfr.lua
-who.lua
+#who.lua

@@ -1,13 +1,14 @@
 local _, ns = ...
 local ycc = ns.ycc
 
--- luacheck: globals FauxScrollFrame_GetOffset WorldStateScoreScrollFrame MAX_WORLDSTATE_SCORE_BUTTONS
 
+-- luacheck: globals FauxScrollFrame_GetOffset WorldStateScoreScrollFrame MAX_WORLDSTATE_SCORE_BUTTONS
+-- C_PvP.GetScoreInfo
 hooksecurefunc('WorldStateScoreFrame_Update', function()
     local inArena = IsActiveBattlefieldArena()
     local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
 
-    for i = 1, MAX_WORLDSTATE_SCORE_BUTTONS do
+    for i = 1, 40 do
         local index = offset + i
         local name, killingBlows, honorableKills, deaths, honorGained, faction, rank, race, class, classToken, damageDone, healingDone, bgRating, ratingChange, preMatchMMR, mmrChange, talentSpec = GetBattlefieldScore(index)
         -- faction: Battlegrounds: Horde = 0, Alliance = 1 / Arenas: Green Team = 0, Yellow Team = 1
