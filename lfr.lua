@@ -1,7 +1,7 @@
 local _, ns = ...
 local ycc = ns.ycc
 
-if ycc.IsClassic() then return end
+if not ycc.IsRetail() then return end
 
 hooksecurefunc('LFRBrowseFrameListButton_SetData', function(button, index)
     local name, level, areaName, className, comment, partyMembers, status, class, encountersTotal, encountersComplete, isIneligible, isLeader, isTank, isHealer, isDamage = SearchLFGGetResults(index)

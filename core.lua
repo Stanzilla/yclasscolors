@@ -8,6 +8,10 @@ function ycc.IsClassic()
     return WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
 end
 
+function ycc.IsRetail()
+    return WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+end
+
 local GUILD_INDEX_MAX = 12
 local SMOOTH = {
     1, 0, 0,

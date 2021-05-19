@@ -65,5 +65,11 @@ local function friendsFrame()
         end
     end
 end
-hooksecurefunc(FriendsListFrameScrollFrame, 'update', friendsFrame)
+
+if not ycc.IsRetail() then
+    hooksecurefunc(FriendsFrameFriendsScrollFrame, 'update', friendsFrame)
+else
+    hooksecurefunc(FriendsListFrameScrollFrame, 'update', friendsFrame)
+end
+
 hooksecurefunc('FriendsFrame_UpdateFriends', friendsFrame)

@@ -57,7 +57,7 @@ local function update()
 end
 
 local loaded = false
-if not ycc.IsClassic() then
+if ycc.IsRetail() then
     hooksecurefunc('GuildFrame_LoadUI', function()
         if(loaded) then
             return
